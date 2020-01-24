@@ -10,8 +10,6 @@ function! SetGlobalCopyBuffer(content)
     let @+=a:content
   endif
 
-  echo "My custom plugin was called"
-
   if exists('*CopyFilepathPost')
     call CopyFilepathPost(a:content)
   endif
