@@ -9,6 +9,10 @@ function! SetGlobalCopyBuffer(content)
   else
     let @+=a:content
   endif
+
+  if exists('#User#CopyFilepathPost')
+    doautocmd <nomodeline> User CopyFilepathPost(a:content)
+  endif
 endfunction
 
 function! CopyRelativePath()
