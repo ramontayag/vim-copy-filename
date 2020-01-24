@@ -10,8 +10,10 @@ function! SetGlobalCopyBuffer(content)
     let @+=a:content
   endif
 
-  if exists('#User#CopyFilepathPost')
-    doautocmd <nomodeline> User CopyFilepathPost(a:content)
+  echo "My custom plugin was called"
+
+  if exists('*CopyFilepathPost')
+    call CopyFilepathPost(a:content)
   endif
 endfunction
 

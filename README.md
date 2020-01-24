@@ -39,3 +39,12 @@ nmap <leader>cd :CopyDirectoryPath<CR>
 ```
 
 Each of the commands calls a function of the same name, so they can also be reused in scripts/functions. For example, you can call `CopyRelativePath()` to access the underlying function for copying the relative path.
+
+To execute your own script whenever the file path is copied, define the CopyFilepathPost function:
+
+```
+function! CopyFilepathPost(content)
+  echo "Filepath was copied: "
+  echo a:content
+endfunction
+```
